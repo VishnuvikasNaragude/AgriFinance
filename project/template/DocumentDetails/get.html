@@ -1,0 +1,40 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>documentId </th>
+        <th>customerId</th>
+        <th>Pancard</th>
+        <th>Aadharcard </th>
+        <th>Phote</th>
+        <th>Signature </th>
+        <th>Postdatedcheque</th>
+        <th>Thumb </th>
+          
+          
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.documentId}}</td>
+      <td>{{i.customerId}}</td>
+      <td>{{i.Pancard}}</td>
+      <td>{{i.Aadharcard}}</td>
+      <td>{{i.Phote}}</td>
+      <td>{{i.Signature}}</td>
+      <td>{{i.Postdatedcheque}}</td>
+      <td>{{i.Thumb}}</td>
+       
+      
+       <td><button class="btn btn-warning"><a href="{% url 'bank_upd_url' i.documentId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'doc_delete' i.documentId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

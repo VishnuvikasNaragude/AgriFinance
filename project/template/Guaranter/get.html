@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>guaranterId </th>
+        <th>guranterName</th>
+        <th>guaranterAddress</th>
+        <th>guaranterRealtionshipwithcustomer </th>
+        <th>guaranterMobileNo</th>
+        <th>aadharCardNo </th>
+          <th>jobDetails</th>
+          
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.guaranterId}}</td>
+      <td>{{i.guranterName}}</td>
+      <td>{{i.guaranterAddress}}</td>
+      <td>{{i.guaranterRealtionshipwithcustomer}}</td>
+      <td>{{i.guaranterMobileNo}}</td>
+      <td>{{i.aadharCardNo}}</td>
+       <td>{{i.jobDetails}}</td>
+      
+       <td><button class="btn btn-warning"><a href="{% url 'gur_upd_url' i.guaranterId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'guar_delete' i.guaranterId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          
