@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>previousloanId </th>
+        <th>previousLoanamount</th>
+        <th>previousLoanStatus</th>
+        <th>Tenure </th>
+        <th>paidAmount</th>
+        <th>remainingAmount </th>
+          <th>bank</th>
+          
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.previousloanId}}</td>
+      <td>{{i.previousLoanamount}}</td>
+      <td>{{i.previousLoanStatus}}</td>
+      <td>{{i.Tenure}}</td>
+      <td>{{i.paidAmount}}</td>
+      <td>{{i.remainingAmount}}</td>
+       <td>{{i.bank}}</td>
+      
+       <td><button class="btn btn-warning"><a href="{% url 'pre_upd_url' i.previousloanId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'pre_delete' i.previousloanId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>cibilId </th>
+        <th>customerPanNo</th>
+        <th>Score</th>
+        <th>Cibil_status </th>
+        <th>Remark </th>
+         
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.cibilId}}</td>
+      <td>{{i.customerPanNo}}</td>
+      <td>{{i.Score}}</td>
+      <td>{{i.Cibil_status}}</td>
+      <td>{{i.Remark}}</td>
+      
+      
+       <td><button class="btn btn-warning"><a href="{% url 'CIbil_put_url' i.cibilId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'CIbil_del_url' i.cibilId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

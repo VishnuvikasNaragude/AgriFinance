@@ -1,0 +1,37 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>enq_id </th>
+        <th>enq_name</th>
+        <th>enqpancardno</th>
+        <th>enq_mobileno </th>
+        <th>enq_age </th>
+          <th>enq_status</th>
+          <th>enq_email</th>
+        <th>enq_vehicle_name</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in data %}
+  <tr>
+      <td>{{i.enq_id}}</td>
+      <td>{{i.enq_name}}</td>
+      <td>{{i.enqpancardno}}</td>
+      <td>{{i.enq_mobileno}}</td>
+      <td>{{i.enq_age}}</td>
+      <td>{{i.enq_status}}</td>
+       <td>{{i.enq_email}}</td>
+       <td>{{i.enq_vehicle_name}}</td>
+       
+       <td><button class="btn btn-warning"><a href="{% url 'upd_url' i.enq_id %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'enquiry_delete' i.enq_id %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

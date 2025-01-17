@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>bankId </th>
+        <th>bankName</th>
+        <th>accountNumber</th>
+        <th>bankIfsc </th>
+        <th>bankMicr</th>
+        <th>bankAddress </th>
+          
+          
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in boj %}
+  <tr>
+      <td>{{i.bankId}}</td>
+      <td>{{i.bankName}}</td>
+      <td>{{i.accountNumber}}</td>
+      <td>{{i.bankIfsc}}</td>
+      <td>{{i.bankMicr}}</td>
+      <td>{{i.bankAddress}}</td>
+       
+      
+       <td><button class="btn btn-warning"><a href="{% url 'doc_upd_url' i.bankId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'bank_delete' i.bankId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

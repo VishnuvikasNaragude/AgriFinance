@@ -1,0 +1,45 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>customerId </th>
+        <th>customerName</th>
+        <th>customerMobileno</th>
+        <th>customerLoanAmount </th>
+        <th>customerAge </th>
+        <th>customerDateofBirth</th>
+        <th>customerEmail</th>
+        <th>customerPancardno</th>
+        <th>Address </th>
+        <th>vehicalId  </th>
+        <th>Bank</th>
+        <th>Guaranter</th>
+        <th>loandetails</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in form %}
+  <tr>
+      <td>{{i.customerId}}</td>
+      <td>{{i.customerName}}</td>
+      <td>{{i.customerMobileno}}</td>
+      <td>{{i.customerLoanAmount}}</td>
+      <td>{{i.customerAge}}</td>
+      <td>{{i.customerDateofBirth}}</td>
+       <td>{{i.customerEmail}}</td>
+       <td>{{i.customerPancardno}}</td>
+       <td>{{i.Address}}</td>
+      <td>{{i.vehicalId }}</td>
+      <td>{{i.Bank}}</td>
+       <td>{{i.Guaranter}}</td>
+       <td>{{i.loandetails}}</td>
+       <td><button class="btn btn-warning"><a href="{% url 'C_put_url' i.customerId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'C_del_url' i.customerId %}">DELETE</a></button></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          

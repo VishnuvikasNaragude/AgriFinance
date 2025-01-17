@@ -1,0 +1,44 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>addressId </th>
+        <th>localHouseNo</th>
+        <th>localArea</th>
+        <th>localLandmark </th>
+        <th>Localcity </th>
+        <th>permanantHouseNo </th>
+        <th>permanantArea</th>
+        <th>permanantLandmark</th>
+        <th>permananatCity </th>
+        <th>Country </th>
+         
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.addressId}}</td>
+      <td>{{i.localHouseNo}}</td>
+      <td>{{i.localArea}}</td>
+      <td>{{i.localLandmark}}</td>
+      <td>{{i.Localcity}}</td>
+      <td>{{i.permanantHouseNo}}</td>
+      <td>{{i.permanantArea}}</td>
+      <td>{{i.permanantLandmark}}</td>
+      <td>{{i.permananatCity}}</td>
+      <td>{{i.Country}}</td>
+
+      <td><button class="btn btn-warning"><a href="{% url 'ADD_put' i.addressId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'ADD_del' i.addressId %}">DELETE</a></button></td>
+      
+      
+       
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          
