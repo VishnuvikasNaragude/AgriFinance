@@ -1,0 +1,7 @@
+<h2>Welcome {{ user.username }}</h2>
+{% if user.is_admin %}
+    <p>You are logged in as an Admin.</p>
+{% elif user.is_user %}
+    <p>You are logged in as a User.</p>
+{% endif %}
+<a href="{% url 'logout' %}">Logout</a>

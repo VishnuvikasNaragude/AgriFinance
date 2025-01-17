@@ -1,0 +1,33 @@
+<div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+        <th>vehicalId </th>
+        <th>modelNo</th>
+        <th>Dealer</th>
+        <th>Price </th>
+        <th>onRoadPrice</th>
+       
+          
+
+
+
+    </tr>
+  </thead>
+  <tbody class="thead-light">
+  {% for i in obj %}
+  <tr>
+      <td>{{i.vehicalId}}</td>
+      <td>{{i.modelNo}}</td>
+      <td>{{i.Dealer}}</td>
+      <td>{{i.Price}}</td>
+      <td>{{i.onRoadPrice}}</td>
+      
+       <td><button class="btn btn-warning"><a href="{% url 'vie_upd_url' i.vehicalId %}">UPDATE</a></button></td>
+       <td><button class="btn btn-danger"><a href="{% url 'vie_delete' i.vehicalId %}">DELETE</a></button></td>
+      
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>          
