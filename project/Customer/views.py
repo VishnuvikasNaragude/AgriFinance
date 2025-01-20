@@ -4,6 +4,7 @@ from .models import Customer
 
 
 # Create your views here.
+
 def CustomerView(Request):
     template_name= 'Customer/customer.html'
     form = CustomerForms()
@@ -35,8 +36,7 @@ def CustomerUpdate(request,id):
     context = {"form": form}
     return render(request,template_name,context)
 
-def CustomerDelete(request,id):
-    
+def CustomerDelete(request,id):   
    obj =Customer.objects.get(customerId=id)
    obj.delete()
    return redirect('C_get_url')
