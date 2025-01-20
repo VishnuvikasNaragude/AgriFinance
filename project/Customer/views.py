@@ -14,6 +14,7 @@ def CustomerView(Request):
     context = {'form':form}
     return render(Request,template_name,context)
 
+
 def CustomerDetails(request):
     template_name='Customer/CusDetails.html'
     obj = Customer.objects.all()
@@ -39,5 +40,6 @@ def CustomerDelete(request,id):
    obj =Customer.objects.get(customerId=id)
    obj.delete()
    return redirect('C_get_url')
+
 
 
