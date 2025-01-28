@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Full page container to center the content -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <!-- Card with padding and centered content -->
+    <div class="card p-4" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Render form fields -->
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+            <!-- Login button -->
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
